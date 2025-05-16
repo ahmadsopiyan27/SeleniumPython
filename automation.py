@@ -20,3 +20,4 @@ driver.find_element(By.ID,'login-button').click
 title = driver.find_element(By.XPATH,'//*[@id="header_container"]/div[1]/div[2]/div').text
 print(title)
 
+print()
