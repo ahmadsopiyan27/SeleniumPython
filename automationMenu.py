@@ -16,10 +16,13 @@ driver.maximize_window()
 
 driver.get('https://demoqa.com/menu')
 
-mneu_item2 = driver.find_element(By)
+
+sub_sublist = driver.find_element(By.XPATH, "//a[contains(text(),'Main Item 2')]")
+menu_item2 = driver.find_element(By.XPATH, "//a[contains(text(),'Sub Sub Item 2')]")
+
 
 try:
-    WebDriverWait(driver,5).until(EC.alert_is_present())
+    WebDriverWait(driver,3).until(EC.alert_is_present())
     print('alert muncul bang')
 
 except TimeoutException:
