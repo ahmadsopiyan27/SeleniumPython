@@ -20,7 +20,7 @@ driver.find_element(By.ID,'login-button').click()
 driver.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()
 driver.find_element(By.ID, "add-to-cart-sauce-labs-bike-light").click()
 # driver.find_element(By.ID, "add-to-cart-sauce-labs-bolt-t-shirt").click()
-sleep(3)
+sleep(4)
 # title = driver.find_element(By.XPATH,"//div[@class='app_logo']").text
 # print(title)
 driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
