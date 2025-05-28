@@ -17,19 +17,18 @@ driver.maximize_window()
 driver.get('https://demoqa.com/menu')
 
 
-sub_sublist = driver.find_element(By.XPATH, "//a[contains(text(),'Main Item 2')]")
-sub_item2 = driver.find_element(By.XPATH,"//a[normalize-space()='SUB SUB LIST »']")
-menu_item2 = driver.find_element(By.XPATH, "//a[contains(text(),'Sub Sub Item 2')]")
+sub_sublist = driver.find_element(By.XPATH,"//a[contains(text(),'Main Item 2')]")
+sub_item2 = driver.find_element(By.XPATH,"//a[contains(text(),'SUB SUB LIST »')]")
+menu_item2 = driver.find_element(By.XPATH,"//a[contains(text(),'Sub Sub Item 2')]")
 
 action = ActionChains(driver)
-action.move_to_element(menu_item2)
 action.move_to_element(sub_sublist)
-action.click(sub_item2)
+action.move_to_element(sub_item2)
 action.perform()
 
 
 try:
-    WebDriverWait(driver,3).until(EC.alert_is_present(By.XPATH, "//a[contains(text(),'Sub Sub Item 2')]"))
+    WebDriverWait(driver,3).until(EC.presence_of_all_elements_located((By.XPATH, "//a[contains(text(),'Sub Sub Item 2')]")))
     sub_item2.click
 
 except TimeoutException:
